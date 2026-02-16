@@ -1,5 +1,57 @@
 package com.skyscanner;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Search {
+    @JsonProperty
+    private String city;
+
+    public Search() {};
+
+    public Search(String city) {
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+};
+
+
+
+public class SearchResult {
+    @JsonProperty
+    private String city;
+
+    @JsonProperty
+    private String title;
+
+    @JsonProperty
+    private String kind;
+
+    public SearchResult() {}
+
+    public SearchResult(String city, String title, String kind) {
+        this.city = city;
+        this.title = title;
+        this.kind = kind;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+};
+
+
+
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
